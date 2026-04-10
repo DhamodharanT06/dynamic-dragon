@@ -1,0 +1,14 @@
+[
+  {
+    "id": "passwords",
+    "name": "Password Manager",
+    "short": "Secure Password Saver",
+    "description": "Store and generate strong passwords locally with zero-knowledge encryption.",
+    "icon": "https://drive.google.com/uc?export=view&id=1fssNqXcl88LkNP3qKmlb2YcXJf5cyk38",
+    "playStore": "https://play.google.com/store/apps/details?id=app.dynamicdragon.password_saver&pcampaignid=web_share",
+    "screenshots": [
+      "https://drive.google.com/uc?export=view&id=1fssNqXcl88LkNP3qKmlb2YcXJf5cyk38",
+      "https://drive.google.com/uc?export=view&id=1fssNqXcl88LkNP3qKmlb2YcXJf5cyk38"
+    ]
+  }
+]

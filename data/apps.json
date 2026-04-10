@@ -1,0 +1,27 @@
+[
+  {
+    "id": "passwords",
+    "name": "Passwords",
+    "short": "Secure Password Saver",
+    "description": "Store and generate strong passwords locally with zero-knowledge encryption.",
+    "icon": "assets/images/icon-passwords.svg",
+    "playStore": "https://play.google.com/store/apps/details?id=com.dynamicdragon.passwords",
+    "screenshots": [
+      "assets/images/ss1.svg",
+      "assets/images/ss2.svg",
+      "assets/images/ss3.svg"
+    ]
+  },
+  {
+    "id": "tiny-tools",
+    "name": "Tiny Tools",
+    "short": "Lightweight utility toolkit",
+    "description": "Handy utilities for daily Android tasks — small, fast, private.",
+    "icon": "assets/images/icon-tools.svg",
+    "playStore": "https://play.google.com/store/apps/details?id=com.dynamicdragon.tinytools",
+    "screenshots": [
+      "assets/images/ss4.svg",
+      "assets/images/ss5.svg"
+    ]
+  }
+]
