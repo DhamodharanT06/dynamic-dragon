@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PrivacyPolicy({site}) {
   const devName = site?.developerName || 'Dynamic Dragon Apps'
-  const devEmail = site?.developerEmail || 'support@dynamicdragon.example'
+  const devEmail = site?.developerEmail || 'dynamic.dragon.dev@gmail.com'
   
   return (
     <section className="privacy-policy container" id="privacy">

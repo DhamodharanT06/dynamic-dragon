@@ -3,7 +3,6 @@ import Hero from './components/Hero'
 import AppsGrid from './components/AppsGrid'
 import Featured from './components/Featured'
 import Trust from './components/Trust'
-import Support from './components/Support'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import Footer from './components/Footer'
 import { toDirectGoogleDriveImageUrl } from './utils/imageUrl'
@@ -39,7 +38,6 @@ export default function App(){
           <h2 className="section-title">About {site?.developerName || 'Dynamic Dragon Apps'}</h2>
           <p>{site?.description || 'Dynamic Dragon Apps builds simple and reliable Android utilities designed for everyday use.'}</p>
         </section>
-        <Support site={site} />
         <PrivacyPolicy site={site} />
         <section className="cta container" id="final-cta">
           <div className="cta-inner">
