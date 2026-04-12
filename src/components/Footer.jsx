@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Footer({site}){
   const devName = site?.developerName || 'Dynamic Dragon Apps'
@@ -15,16 +16,16 @@ export default function Footer({site}){
           <div className="footer-section">
             <h4 className="footer-subtitle">Quick Links</h4>
             <nav className="footer-links">
-              <a href="#apps">View Apps</a>
-              <a href="#about">About</a>
-              <a href="#trust">Why Us</a>
+              <a href="/#apps">View Apps</a>
+              <a href="/#about">About</a>
+              <a href="/#trust">Why Us</a>
             </nav>
           </div>
           <div className="footer-section">
             <h4 className="footer-subtitle">Support</h4>
             <nav className="footer-links">
-              <a href="#support">Support</a>
-              <a href="#privacy">Privacy Policy</a>
+              <a href="/#support">Support</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
               <a href={site?.playStoreDeveloperUrl || '#'} target="_blank" rel="noopener noreferrer">Play Store</a>
             </nav>
           </div>

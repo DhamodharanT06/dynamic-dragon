@@ -1,11 +1,42 @@
 import React, {useEffect, useState, useRef} from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Hero from './components/Hero'
 import AppsGrid from './components/AppsGrid'
 import Featured from './components/Featured'
 import Trust from './components/Trust'
-import PrivacyPolicy from './components/PrivacyPolicy'
 import Footer from './components/Footer'
+import PrivacyPolicy from './components/PrivacyPolicy'
 import { toDirectGoogleDriveImageUrl } from './utils/imageUrl'
+
+function HomePage({apps, site, selectedApp, scrollToApps, openPrimary}) {
+  return (
+    <div className="app-root">
+      <Hero onViewApps={scrollToApps} onLatestClick={openPrimary} site={site} />
+      <main>
+        <section className="apps container" id="apps">
+          <h2 className="section-title">Apps Showcase</h2>
+          <AppsGrid apps={apps} onSelectApp={() => {}} />
+        </section>
+        <Featured app={selectedApp} />
+        <Trust />
+        <section className="about container" id="about">
+          <h2 className="section-title">About {site?.developerName || 'Dynamic Dragon Apps'}</h2>
+          <p>{site?.description || 'Dynamic Dragon Apps builds simple and reliable Android utilities designed for everyday use.'}</p>
+        </section>
+        <section className="cta container" id="final-cta">
+          <div className="cta-inner">
+            <h2>Explore the apps</h2>
+            <p className="muted">Discover secure, small, and useful Android tools.</p>
+            <div className="cta-actions">
+              <button className="btn primary lg" onClick={scrollToApps}>View All Apps</button>
+              <a className="btn ghost lg" href={site?.playStoreDeveloperUrl || 'https://play.google.com/store/apps/developer?id=Dynamic+Dragon+Apps'} target="_blank" rel="noopener noreferrer">Open Play Store</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
 
 export default function App(){
   const [apps, setApps] = useState([])
@@ -25,33 +56,13 @@ export default function App(){
   const scrollToApps = ()=> document.getElementById('apps')?.scrollIntoView({behavior:'smooth'})
 
   return (
-    <div className="app-root">
-      <Hero onViewApps={scrollToApps} onLatestClick={openPrimary} site={site} />
-      <main>
-        <section className="apps container" id="apps">
-          <h2 className="section-title">Apps Showcase</h2>
-          <AppsGrid apps={apps} onSelectApp={setSelectedApp} />
-        </section>
-        <Featured app={selectedApp} />
-        <Trust />
-        <section className="about container" id="about">
-          <h2 className="section-title">About {site?.developerName || 'Dynamic Dragon Apps'}</h2>
-          <p>{site?.description || 'Dynamic Dragon Apps builds simple and reliable Android utilities designed for everyday use.'}</p>
-        </section>
-        <PrivacyPolicy site={site} />
-        <section className="cta container" id="final-cta">
-          <div className="cta-inner">
-            <h2>Explore the apps</h2>
-            <p className="muted">Discover secure, small, and useful Android tools.</p>
-            <div className="cta-actions">
-              <button className="btn primary lg" onClick={scrollToApps}>View All Apps</button>
-              <a className="btn ghost lg" href={site?.playStoreDeveloperUrl || 'https://play.google.com/store/apps/developer?id=Dynamic+Dragon+Apps'} target="_blank" rel="noopener noreferrer">Open Play Store</a>
-            </div>
-          </div>
-        </section>
-      </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage apps={apps} site={site} selectedApp={selectedApp} scrollToApps={scrollToApps} openPrimary={openPrimary} />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy site={site} />} />
+      </Routes>
       <Footer site={site} />
-    </div>
+    </Router>
   )
 }
 
